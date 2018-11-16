@@ -1,0 +1,8 @@
+﻿<main>
+    <div class="jumbotron mt-3 chushka-bg-color">
+        <h1>Welcome to Chushka Universal Web Shop</h1>
+        <hr class="bg-white"/>
+        <h3><a asp-controller="Account" asp-action="Login" class="nav-link-dark">Login</a> if you have an account.</h3>
+        <h3>@Html.ActionLink("Register", "Register", "Account", null, new { @class= "nav-link-dark" }) if you don't.</h3>
+    </div>
+</main>

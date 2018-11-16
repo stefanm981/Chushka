@@ -1,0 +1,31 @@
+﻿@model Chushka.Web.ViewModels.Orders.AllOrdersViewModel
+
+<main class="mt-3 mb-5">
+    <h1 class="text-center">All Orders</h1>
+    <hr class="hr-2 bg-dark"/>
+    <table class="table w-75 mx-auto table-hover">
+        <thead>
+        <tr class="row">
+            <th class="col-md-1">#</th>
+            <th class="col-md-4">Order ID</th>
+            <th class="col-md-2">Customer</th>
+            <th class="col-md-2">Product</th>
+            <th class="col-md-2">Ordered On</th>
+        </tr>
+        </thead>
+        <tbody>
+        @for (int rowIndex = 0; rowIndex < Model.Orders.Count; rowIndex++)
+        {
+            var currectOrder = Model.Orders.ToList()[rowIndex];
+
+            <tr class="row">
+                <th class="col-md-1">@(rowIndex + 1)</th>
+                <td class="col-md-4">@currectOrder.OrderId</td>
+                <td class="col-md-2">@currectOrder.CustomerName</td>
+                <td class="col-md-2">@currectOrder.ProductName</td>
+                <td class="col-md-2">@currectOrder.OrderedOn.ToString("HH:mm dd/MM/yyyy")</td>
+            </tr>
+        }  
+        </tbody>
+    </table>  
+</main>
